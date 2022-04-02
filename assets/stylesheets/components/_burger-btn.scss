@@ -1,0 +1,30 @@
+.burger-btn {
+  width: 36px;
+  height: 36px;
+  background-color: transparent;
+  background-image: none;
+
+  &:hover {
+    span {
+      background: $--main;
+    }
+  }
+
+  span {
+    margin: 6px 0;
+
+    display: block;
+    background: $--white;
+    width: 28px;
+    height: 3px;
+  }
+
+  &__top-bar {
+  }
+
+  &__middle-bar {
+  }
+
+  &__bottom-bar {
+  }
+}

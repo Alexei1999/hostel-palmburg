@@ -1,0 +1,51 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x'
+  displayName: 'Using Node.js 14.x'
+
+- script: |
+    yarn
+    yarn generate
+  displayName: 'install and build'
+
+- task: ArchiveFiles@2
+  displayName: 'archive'
+  inputs:
+    rootFolderOrFile: 'dist'
+    includeRootFolder: false
+    archiveType: '7z'
+    archiveFile: 'zip/app.7z'
+    replaceExistingArchive: true
+
+- task: SSH@0
+  displayName: 'remove old'
+  inputs:
+    sshEndpoint: 'BWS Majordomo'
+    runOptions: 'inline'
+    inline: 'rm -rf /home/u9818/hostelpalmburg/www/'
+    failOnStdErr: false
+    readyTimeout: '20000'
+
+- task: CopyFilesOverSSH@0
+  displayName: 'publish'
+  inputs:
+    sshEndpoint: 'BWS Majordomo'
+    sourceFolder: 'zip'
+    contents: '**'
+    targetFolder: '/home/u9818/hostelpalmburg/'
+
+- task: SSH@0
+  displayName: 'install on majordomo'
+  inputs:
+    sshEndpoint: 'BWS Majordomo'
+    runOptions: 'inline'
+    inline: '7z x /home/u9818/hostelpalmburg/app.7z -o/home/u9818/hostelpalmburg/www 2>> /home/u9818/hostelpalmburg/publish.log'
+    failOnStdErr: false
+    readyTimeout: '20000'

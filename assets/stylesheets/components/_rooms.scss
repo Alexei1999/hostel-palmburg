@@ -1,0 +1,26 @@
+.rooms {
+  background: #FBFBFB;
+
+  &__cards {
+    @extend %display-flex;
+    flex-wrap: wrap;
+  }
+
+  &__cards-wrapper {
+    flex: 0 0 50%;
+    display: flex;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .rooms {
+    .wrapper {
+      padding: 50px 5px;
+    }
+
+    &__cards-wrapper {
+      flex: 0 0 100%;
+    }
+  }
+}

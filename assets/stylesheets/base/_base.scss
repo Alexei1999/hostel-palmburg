@@ -1,0 +1,46 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+  font-feature-settings: "lnum";
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.page-enter-active,
+.page-leave-active
+{
+  transition: opacity .3s;
+}
+
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: .4;
+
+  &:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+
+    svg {
+      fill: #000000;
+    }
+  }
+}

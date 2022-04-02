@@ -1,0 +1,52 @@
+body {
+  color: $--black-text;
+  font-weight: 400;
+  font-family: $--font-main;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4 {
+  font-family: $--font-headers;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 39px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 30px;
+}
+
+a {
+  color: $--black-text;
+
+  &:hover {
+    color: $--main-darker;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+}

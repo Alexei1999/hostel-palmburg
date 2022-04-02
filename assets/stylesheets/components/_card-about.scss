@@ -1,0 +1,187 @@
+.card-about {
+  margin: 0 auto;
+
+  max-width: 1050px;
+  border: 1px solid #F1F0E8;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.11);
+
+  &__wrapper {
+    padding: 45px;
+  }
+
+  &__slider {
+    height: auto !important;
+
+    svg {
+      width: 100px;
+      height: 100px;
+      fill: $--white;
+      stroke: black;
+      stroke-width: .1px;
+    }
+
+    .hooper-prev, .hooper-next {
+      padding: 0;
+    }
+  }
+
+  &__img {
+    display: block;
+    position: relative;
+
+    img {
+      width: 100%;
+      max-height: 100%;
+    }
+
+    &:before {
+      content: '';
+
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__map {
+    position: relative;
+  }
+
+  &__map-buttons {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+  }
+
+  &__map-btn {
+    padding: 25px;
+    background: $--main;
+    border: 1px solid $--main-darker;
+    cursor: pointer;
+
+    img {
+      height: 50px;
+      width: 50px;
+    }
+
+    &:hover {
+      background: lighten($--main, 5);
+    }
+  }
+
+  &__content {
+    padding-bottom: 25px;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__text-title {
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    margin-bottom: 15px;
+    line-height: 1.5;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__contacts {
+    @extend %display-flex;
+    flex-wrap: wrap;
+  }
+
+  &__contact {
+    margin-bottom: 20px;
+    @extend %display-flex;
+    flex-basis: 50%;
+    align-items: center;
+
+    a {
+      word-wrap: anywhere;
+    }
+  }
+
+  &__contact-icon {
+    margin-right: 24px;
+    width: 24px;
+    height: 24px;
+    min-height: 24px;
+    min-width: 24px;
+    fill: $--main;
+    flex-grow: 0;
+
+    &--text {
+      margin-left: 15px;
+      margin-right: 0;
+    }
+  }
+
+  &__list {
+    margin-bottom: 15px;
+    margin-left: 15px;
+
+    list-style: disc;
+  }
+
+  &__list-item {
+    color: $--main;
+
+    span {
+      color: $--black;
+    }
+  }
+
+  &__buttons {
+    @extend %display-flex;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    text-align: center;
+    width: 45%;
+
+    a {
+      padding: 20px 25px;
+    }
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .card-about {
+    &__wrapper {
+      padding: 10px;
+    }
+
+    &__title, &__description {
+      margin-bottom: 20px;
+      height: auto;
+    }
+
+    &__btn {
+      a, button {
+        padding: 10px;
+      }
+    }
+
+    &__slider svg {
+      width: 50px;
+      height: 50px;
+    }
+
+    &__contacts {
+      flex-direction: column;
+    }
+  }
+}

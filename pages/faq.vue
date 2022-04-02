@@ -7,7 +7,7 @@
 
 <script>
 import AppAccordion from '~/components/Accordion'
-import { faq } from '~/content/faq'
+import { faq } from '~/static/faq'
 
 export default {
   name: 'Faq',

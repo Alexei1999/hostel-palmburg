@@ -10,10 +10,10 @@
                 .room-card__wrapper
                   .room-card__img
                     picture
-                      source(type="image/webp" :srcSet="room.imgSrc.webp.srcSet")
+                      //- source(type="image/webp" :srcSet="room.imgSrc.webp.srcSet")
                       //- source(type="image/avif" :srcSet="room.imgSrc.avif.srcSet")
-                      source(type="image/jpeg" :srcSet="room.imgSrc.jpg.srcSet")
-                      img(:src="room.imgSrc")
+                      //- source(type="image/jpeg" :srcSet="room.imgSrc.jpg.srcSet")
+                      img(:src="room.imgSrc.jpg")
                   h3.room-card__title {{room.title[actualLocale]}}
                   .room-card__description {{room.content[actualLocale]}}
                   span.room-card__btn.btn
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { roomsData } from '~/content/rooms'
+import { roomsData } from '~/static/rooms'
 
 export default {
   name: 'AppRoomsSection',

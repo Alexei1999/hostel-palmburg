@@ -6,10 +6,10 @@
         slide(v-for="(img,i) in galleryImages" :key="i").gallery__slide
           .gallery__img
             picture
-              source(type="image/webp" :srcSet="img.webp.srcSet")
+              //- source(type="image/webp" :srcSet="img.webp.srcSet")
               //- source(type="image/avif" :srcSet="img.avif.srcSet")
-              source(type="image/jpeg" :srcSet="img.jpg.srcSet")
-              img(:src="img")
+              //- source(type="image/jpeg" :srcSet="img.jpg.srcSet")
+              img(:src="img.jpg")
       .gallery__buttons
         button(@click.prevent="slidePrev" ref="prevBtn").gallery__btn
           span
@@ -21,52 +21,13 @@
               use(xlink:href="#angle")
 </template>
 <script>
+import { aboutUsImg } from '~/static/about-us-img'
+
 export default {
   name: 'AppGallery',
   data () {
     return {
-      galleryImages: [
-        {
-          jpg: require('@/assets/images/gallery/1.jpg?resize'),
-          webp: require('@/assets/images/gallery/1.jpg?resize&format=webp'),
-          // // avif: require('@/assets/images/gallery/1.jpg?resize&format=avif')
-        },
-        {
-          jpg: require('@/assets/images/gallery/2.jpg?resize'),
-          webp: require('@/assets/images/gallery/2.jpg?resize&format=webp'),
-          // // avif: require('@/assets/images/gallery/2.jpg?resize&format=avif')
-        },
-        {
-          jpg: require('@/assets/images/gallery/3.jpg?resize'),
-          webp: require('@/assets/images/gallery/3.jpg?resize&format=webp'),
-          // // avif: require('@/assets/images/gallery/3.jpg?resize&format=avif')
-        },
-        {
-          jpg: require('@/assets/images/gallery/4.jpg?resize'),
-          webp: require('@/assets/images/gallery/4.jpg?resize&format=webp'),
-          // // avif: require('@/assets/images/gallery/4.jpg?resize&format=avif')
-        },
-        {
-          jpg: require('@/assets/images/gallery/5.jpg?resize'),
-          webp: require('@/assets/images/gallery/5.jpg?resize&format=webp'),
-          // // avif: require('@/assets/images/gallery/5.jpg?resize&format=avif')
-        },
-        {
-          jpg: require('@/assets/images/gallery/6.jpg?resize'),
-          webp: require('@/assets/images/gallery/6.jpg?resize&format=webp'),
-          // // avif: require('@/assets/images/gallery/6.jpg?resize&format=avif')
-        },
-        {
-          jpg: require('@/assets/images/gallery/7.jpg?resize'),
-          webp: require('@/assets/images/gallery/7.jpg?resize&format=webp'),
-          // // avif: require('@/assets/images/gallery/7.jpg?resize&format=avif')
-        },
-        {
-          jpg: require('@/assets/images/gallery/8.jpg?resize'),
-          webp: require('@/assets/images/gallery/8.jpg?resize&format=webp'),
-          // // avif: require('@/assets/images/gallery/8.jpg?resize&format=avif')
-        }
-      ],
+      galleryImages: aboutUsImg.galery,
       hooperSettings: {
         pagination: 'no',
         trimWhiteSpace: true,

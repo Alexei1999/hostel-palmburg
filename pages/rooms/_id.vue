@@ -10,7 +10,7 @@
                   source(type="image/webp" :srcSet="img.webp.srcSet")
                   //- source(type="image/avif" :srcSet="img.avif.srcSet")
                   source(type="image/jpeg" :srcSet="img.jpg.srcSet")
-                  img(:src="img")
+                  img(:src="img.jpg")
             hooper-navigation(slot="hooper-addons")
             hooper-pagination(slot="hooper-addons")
           .card-about__wrapper
@@ -32,7 +32,7 @@
 
 <script>
 import { mapActions } from 'vuex'
-import { roomsData } from '~/content/rooms'
+import { roomsData } from '~/static/rooms'
 import AppRoomsSection from '~/components/index/RoomsSection'
 
 export default {

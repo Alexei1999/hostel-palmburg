@@ -12,10 +12,10 @@
               //  hooper-pagination(slot="hooper-addons")
               .rooms-card__img
                 picture
-                  source(type="image/webp" :srcSet="room.imgSrc.webp.srcSet")
+                  //- source(type="image/webp" :srcSet="room.imgSrc.webp.srcSet")
                   //- source(type="image/avif" :srcSet="room.imgSrc.avif.srcSet")
-                  source(type="image/jpeg" :srcSet="room.imgSrc.jpg.srcSet")
-                  img(:src="room.imgSrc")
+                  //- source(type="image/jpeg" :srcSet="room.imgSrc.jpg.srcSet")
+                  img(:src="room.imgSrc.jpg")
               .rooms-card__wrapper
                 h3.rooms-card__title {{room.title[actualLocale]}}
                 .rooms-card__description {{room.content[actualLocale]}}
@@ -28,7 +28,7 @@
 
 <script>
 import { mapActions } from 'vuex'
-import { roomsData } from '~/content/rooms'
+import { roomsData } from '~/static/rooms'
 
 export default {
   name: 'Rooms',

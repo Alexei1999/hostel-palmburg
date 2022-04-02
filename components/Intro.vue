@@ -3,10 +3,10 @@
     .rope-border
     .intro__background
       picture
-        source(type="image/webp" :srcSet="getBgImage.webp.srcSet")
+        //- source(type="image/webp" :srcSet="getBgImage.webp.srcSet")
         //- source(type="image/avif" :srcSet="getBgImage.avif.srcSet")
-        source(type="image/jpeg" :srcSet="getBgImage.jpeg.srcSet")
-        img(:src="getBgImage.jpeg.src")
+        //- source(type="image/jpeg" :srcSet="getBgImage.jpeg.srcSet")
+        img(:src="getBgImage")
     .intro__wrapper
       .container
         .intro__content
@@ -20,6 +20,7 @@
 
 <script>
 import { mapActions } from 'vuex'
+import { roomsData } from '~/static/rooms'
 import { introBackgrounds } from '@/content/introBackgrounds'
 
 export default {
@@ -27,7 +28,7 @@ export default {
   data () {
     return {
       currentPageTitle: '',
-      introBackgrounds
+      introBackgrounds: ''
     }
   },
   computed: {
@@ -87,45 +88,36 @@ export default {
       }
     },
     getBgImage () {
+      const param = this.getRouterParam
+      const room = roomsData.find(room => room.slug === param)
+
+      if (room?.background?.jpg) {
+        return room.background.jpg
+      }
+
       const route = this.$route.path
         .slice()
         .replace('en', '')
         .replace('//', '/')
-      return introBackgrounds[route]
+      return introBackgrounds[route]?.jpg ?? ''
     }
   },
   methods: {
     getRoomName (param, mode) {
+      const slugs = Object.values(roomsData.map(room => room.slug))
       if (mode === 'title') {
-        switch (param) {
-          case 'two-room':
-            return this.$t('roomsTitles.titleTwo')
-          case 'six-room':
-            return this.$t('roomsTitles.titleSix')
-          case 'eight-room':
-            return this.$t('roomsTitles.titleEight')
-          case 'ten-room':
-            return this.$t('roomsTitles.titleTen')
-          case 'twelve-room':
-            return this.$t('roomsTitles.titleTwelve')
-          default:
-            return 'An error has occurred'
+        if (slugs.includes(param)) {
+          return this.$t(`roomsTitles.${param}`)
         }
-      } else if (mode === 'image') {
-        switch (param) {
-          case 'two-room':
-            return 'intro--two-room'
-          case 'six-room':
-            return 'intro--six-room'
-          case 'eight-room':
-            return 'intro--eight-room'
-          case 'ten-room':
-            return 'intro--ten-room'
-          case 'twelve-room':
-            return 'intro--twelve-room'
-          default:
-            return 'intro--error-page'
+
+        return 'An error has occurred'
+      }
+      if (mode === 'image') {
+        if (slugs.includes(param)) {
+          return `intro--${param}`
         }
+
+        return 'intro--error-page'
       }
     },
     ...mapActions('layout', ['toggleBookingModal'])

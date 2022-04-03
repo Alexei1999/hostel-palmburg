@@ -21,19 +21,25 @@
 </template>
 
 <script>
-import { aboutUsImg } from '~/static/about-us-img'
-
 export default {
   name: 'AppAboutUsCard',
+  props: {
+    aboutUsImg: {
+      type: Object,
+      default: () => null
+    }
+  },
   data () {
     return {
-      aboutImages: aboutUsImg.slider,
       hooperSettings: {
         wheelControl: false
       }
     }
   },
   computed: {
+    aboutImages () {
+      return this.aboutUsImg?.slider ?? []
+    },
     content () {
       return this.$t('aboutUsContent')
     },

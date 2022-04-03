@@ -21,13 +21,16 @@
               use(xlink:href="#angle")
 </template>
 <script>
-import { aboutUsImg } from '~/static/about-us-img'
-
 export default {
   name: 'AppGallery',
+  props: {
+    aboutUsImg: {
+      type: Object,
+      default: () => null
+    }
+  },
   data () {
     return {
-      galleryImages: aboutUsImg.galery,
       hooperSettings: {
         pagination: 'no',
         trimWhiteSpace: true,
@@ -47,6 +50,7 @@ export default {
     }
   },
   computed: {
+    galleryImages () { return this.aboutUsImg?.galery ?? [] },
     translate () {
       return this.$t('aboutUs')
     }

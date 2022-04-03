@@ -20,7 +20,6 @@
 
 <script>
 import { mapActions } from 'vuex'
-import { roomsData } from '~/static/rooms'
 import { introBackgrounds } from '@/content/introBackgrounds'
 
 export default {
@@ -28,13 +27,34 @@ export default {
   data () {
     return {
       currentPageTitle: '',
-      introBackgrounds: ''
+      introBackgrounds: '',
+      roomsData: null
     }
+  },
+  async fetch () {
+    this.roomsData = await this.$axios.$get('/rooms.json')
   },
   computed: {
     getRouterParam () {
       return this.$route.params.id
     },
+    getRoomName () {
+      const param = this.getRouterParam
+
+      const slugs = Object.values(this.roomsData?.map(room => room.slug) ?? {})
+
+      if (!slugs.includes(param)) {
+        return {
+          title: 'An error has occurred',
+          image: 'intro--error-page'
+        }
+      }
+      return {
+        title: this.$t(`roomsTitles.${param}`),
+        image: `intro--${param}`
+      }
+    },
+
     getPageName () {
       let routeName = ''
       try {
@@ -56,7 +76,7 @@ export default {
         case 'contacts':
           return this.$t('introTitle.contacts')
         case 'rooms-id':
-          return this.getRoomName(this.getRouterParam, 'title')
+          return this.getRoomName.title
         default:
           return routeName
       }
@@ -82,14 +102,14 @@ export default {
         case 'contacts':
           return 'intro--contacts '
         case 'rooms-id':
-          return this.getRoomName(this.getRouterParam, 'image')
+          return this.getRoomName.image
         default:
           return 'intro--error-page'
       }
     },
     getBgImage () {
       const param = this.getRouterParam
-      const room = roomsData.find(room => room.slug === param)
+      const room = this.roomsData?.find(room => room.slug === param)
 
       if (room?.background?.jpg) {
         return room.background.jpg
@@ -103,23 +123,6 @@ export default {
     }
   },
   methods: {
-    getRoomName (param, mode) {
-      const slugs = Object.values(roomsData.map(room => room.slug))
-      if (mode === 'title') {
-        if (slugs.includes(param)) {
-          return this.$t(`roomsTitles.${param}`)
-        }
-
-        return 'An error has occurred'
-      }
-      if (mode === 'image') {
-        if (slugs.includes(param)) {
-          return `intro--${param}`
-        }
-
-        return 'intro--error-page'
-      }
-    },
     ...mapActions('layout', ['toggleBookingModal'])
   }
 }

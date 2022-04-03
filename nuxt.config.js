@@ -1,5 +1,6 @@
 export default {
   target: 'static',
+  ssr: false,
 
   head: {
     title: 'Hostel Palmburg',
@@ -40,9 +41,6 @@ export default {
     'hooper/dist/hooper.css'
   ],
 
-  plugins: [
-    '~/plugins/slider.js'],
-
   components: true,
 
   buildModules: [
@@ -50,7 +48,7 @@ export default {
     '@nuxtjs/eslint-module'
   ],
 
-  modules: ['nuxt-i18n'],
+  modules: ['nuxt-i18n', '@nuxtjs/axios'],
   i18n: {
     strategy: 'prefix_except_default',
     locales: [
@@ -83,6 +81,10 @@ export default {
       }
     }
   },
+
+  plugins: [
+    '~/plugins/slider.js'
+  ],
 
   optimizedImages: {
     optimizeImages: true,

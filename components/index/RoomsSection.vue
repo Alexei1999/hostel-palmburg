@@ -31,8 +31,6 @@
 </template>
 
 <script>
-import { roomsData } from '~/static/rooms'
-
 export default {
   name: 'AppRoomsSection',
   props: {
@@ -43,6 +41,10 @@ export default {
     isFiltered: {
       type: Boolean,
       default: false
+    },
+    roomsData: {
+      type: Array,
+      default: () => null
     }
   },
   data () {
@@ -72,7 +74,7 @@ export default {
     },
     rooms () {
       const routeParam = this.$route.params.id ? this.$route.params.id : ''
-      return roomsData.filter(room => room.slug !== routeParam)
+      return this.roomsData?.filter(room => room.slug !== routeParam)
     },
     translate () {
       return this.$t('common')

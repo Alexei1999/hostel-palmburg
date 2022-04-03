@@ -16,7 +16,7 @@ export default {
   props: {
     accordionContent: {
       type: Array,
-      required: true
+      default: () => []
     }
   },
   computed: {

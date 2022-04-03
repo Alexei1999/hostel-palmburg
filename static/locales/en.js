@@ -59,12 +59,12 @@ export default {
     paid: 'Paid services'
   },
   freeServices: {
-    en1_free123: 'en1 free123',
-    en2_free: 'en2 free'
+    slug2: 'en1 free123',
+    slug3: 'en2 free'
   },
   paidServices: {
-    en1_paid: 'en1 paid',
-    en2_paid: 'en2 paid'
+    slug2: 'en1 paid',
+    slug3: 'en2 paid'
   },
   roomsSection: {
     titleAll: 'Cabins',

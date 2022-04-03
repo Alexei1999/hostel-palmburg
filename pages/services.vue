@@ -3,7 +3,7 @@
     .container
       .wrapper
         h2.title {{ this.$t('serviceTypes').free }}
-        app-services-cards(:items="this.services.free" :locale="this.$t('freeServices')")
+        app-services-cards(:items="this.services && this.services.free" :locale="this.$t('freeServices')")
     .quote
       .container
         .wrapper
@@ -12,20 +12,24 @@
     .container
       .wrapper
         h2.title {{ this.$t('serviceTypes').paid }}
-        app-services-cards(:items="this.services.paid" :locale="this.$t('paidServices')")
+        app-services-cards(:items="this.services && this.services.paid" :locale="this.$t('paidServices')")
 
 </template>
 
 <script>
 import AppServicesCards from '~/components/services/ServicesCards'
-import { servicesData } from '~/static/services'
 
 export default {
   name: 'Services',
   components: { AppServicesCards },
-  computed: {
-    services () {
-      return servicesData
+  async asyncData ({ $axios }) {
+    return {
+      services: await $axios.$get('/services.json')
+    }
+  },
+  data () {
+    return {
+      services: null
     }
   }
 }

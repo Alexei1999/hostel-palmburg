@@ -7,14 +7,23 @@
 
 <script>
 import AppAccordion from '~/components/Accordion'
-import { faq } from '~/static/faq'
 
 export default {
   name: 'Faq',
   components: { AppAccordion },
+  async asyncData ({ $axios }) {
+    return {
+      faq: await $axios.$get('/faq.json')
+    }
+  },
+  data () {
+    return {
+      faq: null
+    }
+  },
   computed: {
     questions () {
-      return faq
+      return this.faq ?? []
     }
   }
 }

@@ -26,28 +26,35 @@
               span.card-about__btn.btn.btn--secondary
                 button(@click="toggleBookingModal") {{translate.booking}}
     .other-rooms
-      app-rooms-section(:title="translateRooms")
+      app-rooms-section(:title="translateRooms" :roomsData="roomsData")
 
 </template>
 
 <script>
 import { mapActions } from 'vuex'
-import { roomsData } from '~/static/rooms'
 import AppRoomsSection from '~/components/index/RoomsSection'
 
 export default {
   name: 'RoomId',
   components: { AppRoomsSection },
   validate ({ params }) {
-    for (const room of roomsData) {
+    if (!this.roomsData) { return true }
+
+    for (const room of this.roomsData) {
       if (room.slug === params.id) {
         return true
       }
     }
     return false
   },
+  async asyncData ({ $axios }) {
+    return {
+      roomsData: await $axios.$get('/rooms.json')
+    }
+  },
   data () {
     return {
+      roomsData: null,
       hooperSettings: {
         wheelControl: false
       }
@@ -55,7 +62,7 @@ export default {
   },
   computed: {
     room () {
-      return roomsData.find(room => room.slug === this.$route.params.id)
+      return this.roomsData?.find(room => room.slug === this.$route.params.id)
     },
     translate () {
       return this.$t('common')

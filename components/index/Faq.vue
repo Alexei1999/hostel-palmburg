@@ -5,26 +5,18 @@
         h2.title FAQ
         app-accordion(:accordionContent="questions")
         span.btn.btn--secondary.btn--section
-          nuxt-link(:to="localePath('/faq')") {{ this.t && this.t.common.showMore }}
+          nuxt-link(:to="localePath('/faq')") {{ this.$tt('common.showMore') }}
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import AppAccordion from '~/components/Accordion'
 
 export default {
   name: 'AppFaqSection',
   components: { AppAccordion },
-  props: {
-    faq: {
-      type: Array,
-      default: () => []
-    },
-    t: {
-      type: Object,
-      default: () => null
-    }
-  },
   computed: {
+    ...mapState('data', ['$tt', 'faq']),
     questions () {
       return this.faq?.slice(0, 3)
     }

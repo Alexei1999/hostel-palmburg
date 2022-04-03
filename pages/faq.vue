@@ -6,22 +6,14 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import AppAccordion from '~/components/Accordion'
 
 export default {
   name: 'Faq',
   components: { AppAccordion },
-  async asyncData ({ $axios }) {
-    return {
-      faq: await $axios.$get('/faq.json')
-    }
-  },
-  data () {
-    return {
-      faq: null
-    }
-  },
   computed: {
+    ...mapState('data', ['faq']),
     questions () {
       return this.faq ?? []
     }

@@ -27,21 +27,17 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'Rooms',
-  async asyncData ({ $axios }) {
-    return {
-      roomsData: await $axios.$get('/rooms.json')
-    }
-  },
   computed: {
+    ...mapState('data', ['$tt', 'roomsData']),
     rooms () {
       return this.roomsData
     },
     translate () {
-      return this.$t('common')
+      return this.$tt('common')
     },
     actualLocale () {
       return this.$i18n.locale

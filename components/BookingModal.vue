@@ -17,8 +17,9 @@ export default {
   name: 'BookingModal',
   computed: {
     ...mapState('layout', ['isBookingModalOpen']),
+    ...mapState('data', ['$tt']),
     translate () {
-      return this.$t('common')
+      return this.$tt('common')
     },
     getLocale () {
       return this.$i18n.locale

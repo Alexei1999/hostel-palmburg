@@ -45,6 +45,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 import AppGoogleMapSection from '~/components/contacts/GoogleMapSection'
 import AppYandexMapSection from '~/components/contacts/YandexMapSection'
 
@@ -60,10 +62,11 @@ export default {
     }
   },
   computed: {
+    ...mapState('data', ['$tt']),
     translate () {
       return {
-        common: this.$t('common'),
-        documents: this.$t('documents')
+        common: this.$tt('common'),
+        documents: this.$tt('documents')
       }
     }
   }

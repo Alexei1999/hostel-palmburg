@@ -13,12 +13,13 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import { linksNav } from '~/content/links'
 
 export default {
   name: 'AppHeaderNav',
   computed: {
+    ...mapState('data', ['$tt']),
     links () {
       return linksNav
     },
@@ -26,7 +27,7 @@ export default {
       return this.$i18n.locale
     },
     booking () {
-      return this.$t('common.booking')
+      return this.$tt('common.booking')
     }
   },
   methods: {

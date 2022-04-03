@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import AppLogo from '~/components/Logo'
 import { linksNav } from '~/content/links'
 
@@ -61,13 +61,14 @@ export default {
     AppLogo
   },
   computed: {
+    ...mapState('data', ['$tt']),
     links () {
       return linksNav
     },
     translate () {
       return {
-        footer: this.$t('footer'),
-        common: this.$t('common')
+        footer: this.$tt('footer'),
+        common: this.$tt('common')
       }
     },
     actualLocale () {

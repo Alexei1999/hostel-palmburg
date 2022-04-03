@@ -31,6 +31,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'AppRoomsSection',
   props: {
@@ -41,10 +43,6 @@ export default {
     isFiltered: {
       type: Boolean,
       default: false
-    },
-    roomsData: {
-      type: Array,
-      default: () => null
     }
   },
   data () {
@@ -69,6 +67,7 @@ export default {
     }
   },
   computed: {
+    ...mapState('data', ['roomsData', '$tt']),
     sectionTitle () {
       return this.title
     },
@@ -77,7 +76,7 @@ export default {
       return this.roomsData?.filter(room => room.slug !== routeParam)
     },
     translate () {
-      return this.$t('common')
+      return this.$tt('common')
     },
     actualLocale () {
       return this.$i18n.locale

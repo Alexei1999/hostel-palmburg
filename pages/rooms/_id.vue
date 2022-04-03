@@ -14,12 +14,12 @@
             hooper-navigation(slot="hooper-addons")
             hooper-pagination(slot="hooper-addons")
           .card-about__wrapper
-            h2.card-about__title {{room.title[actualLocale]}}
+            h2.card-about__title {{room.title && room.title[actualLocale]}}
             .card-about__content
               ul.card-about__list
                 li.card-about__list-item(v-for="(advantage,idx) in room.advantages" :key="idx")
-                  span {{advantage[actualLocale]}}
-              p.card-about__text(v-for="(content,idx) in room.additionContent" :key="idx") {{content[actualLocale]}}
+                  span {{advantage && advantage[actualLocale]}}
+              p.card-about__text(v-for="(content,idx) in room.additionContent" :key="idx") {{content && content[actualLocale]}}
             .card-about__buttons
               span.card-about__btn.btn
                 nuxt-link(:to="localePath('/rooms')") {{translate.back}}
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import AppRoomsSection from '~/components/index/RoomsSection'
 
 export default {
@@ -47,28 +47,26 @@ export default {
     }
     return false
   },
-  async asyncData ({ $axios }) {
-    return {
-      roomsData: await $axios.$get('/rooms.json')
-    }
-  },
   data () {
     return {
-      roomsData: null,
       hooperSettings: {
         wheelControl: false
       }
     }
   },
   computed: {
+    ...mapState('data', ['$tt', 'roomsData']),
     room () {
-      return this.roomsData?.find(room => room.slug === this.$route.params.id)
+      return this.roomsData?.find(room => room.slug === this.$route.params.id) ?? {
+        imageSet: [],
+        advantages: []
+      }
     },
     translate () {
-      return this.$t('common')
+      return this.$tt('common')
     },
     translateRooms () {
-      return this.$t('roomsSection.titleCurrent')
+      return this.$tt('roomsSection.titleCurrent')
     },
     actualLocale () {
       return this.$i18n.locale

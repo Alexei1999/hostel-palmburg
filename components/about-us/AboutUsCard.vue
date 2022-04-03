@@ -21,14 +21,10 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'AppAboutUsCard',
-  props: {
-    aboutUsImg: {
-      type: Object,
-      default: () => null
-    }
-  },
   data () {
     return {
       hooperSettings: {
@@ -37,14 +33,15 @@ export default {
     }
   },
   computed: {
+    ...mapState('data', ['aboutUsImg', '$tt']),
     aboutImages () {
       return this.aboutUsImg?.slider ?? []
     },
     content () {
-      return this.$t('aboutUsContent')
+      return this.$tt('aboutUsContent')
     },
     translate () {
-      return this.$t('aboutUs')
+      return this.$tt('aboutUs')
     }
   },
   mounted () {

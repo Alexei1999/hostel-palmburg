@@ -1,49 +1,48 @@
 {
-   "piska": "piska",
-   "free":[
-      {
-         "slug":"slug2",
-         "imgSrc":{
-            "jpg":"http://2.56.213.189:8088/storage/palmburg/services/free-3.svg",
-            "webp":"http://2.56.213.189:8088/storage/palmburg/services/free-1.jpg"
-         }
-      },
-      {
-         "slug":"slug3",
-         "imgSrc":{
-            "jpg":"http://2.56.213.189:8088/storage/palmburg/services/free-3.svg",
-            "webp":"http://2.56.213.189:8088/storage/palmburg/services/free-2.jpg"
-         }
-      },
-      {
-         "slug":"slug4",
-         "imgSrc":{
-            "jpg":"http://2.56.213.189:8088/storage/palmburg/services/free-3.svg",
-            "webp":"http://2.56.213.189:8088/storage/palmburg/services/free-3.jpg"
-         }
-      }
+   "free": [
+       {
+           "slug": "slug2",
+           "imgSrc": {
+               "jpg": "http://2.56.213.189:8088/storage/palmburg/services/free-1.jpg",
+               "webp": "http://2.56.213.189:8088/storage/palmburg/services/free-1.jpg"
+           }
+       },
+       {
+           "slug": "slug3",
+           "imgSrc": {
+               "jpg": "http://2.56.213.189:8088/storage/palmburg/services/free-2.jpg",
+               "webp": "http://2.56.213.189:8088/storage/palmburg/services/free-2.jpg"
+           }
+       },
+       {
+           "slug": "slug4",
+           "imgSrc": {
+               "jpg": "http://2.56.213.189:8088/storage/palmburg/services/free-3.jpg",
+               "webp": "http://2.56.213.189:8088/storage/palmburg/services/free-3.jpg"
+           }
+       }
    ],
-   "paid":[
-      {
-         "slug":"slug2",
-         "imgSrc":{
-            "jpg":"http://2.56.213.189:8088/storage/palmburg/services/free-3.svg",
-            "webp":"http://2.56.213.189:8088/storage/palmburg/services/paid-1.jpg"
-         }
-      },
-      {
-         "slug":"slug3",
-         "imgSrc":{
-            "jpg":"http://2.56.213.189:8088/storage/palmburg/services/free-3.svg",
-            "webp":"http://2.56.213.189:8088/storage/palmburg/services/paid-2.jpg"
-         }
-      },
-      {
-         "slug":"slug4",
-         "imgSrc":{
-            "jpg":"http://2.56.213.189:8088/storage/palmburg/services/free-3.svg",
-            "webp":"http://2.56.213.189:8088/storage/palmburg/services/paid-3.jpg"
-         }
-      }
+   "paid": [
+       {
+           "slug": "slug2",
+           "imgSrc": {
+               "jpg": "http://2.56.213.189:8088/storage/palmburg/services/paid-1.jpg",
+               "webp": "http://2.56.213.189:8088/storage/palmburg/services/paid-1.jpg"
+           }
+       },
+       {
+           "slug": "slug3",
+           "imgSrc": {
+               "jpg": "http://2.56.213.189:8088/storage/palmburg/services/paid-2.jpg",
+               "webp": "http://2.56.213.189:8088/storage/palmburg/services/paid-2.jpg"
+           }
+       },
+       {
+           "slug": "slug4",
+           "imgSrc": {
+               "jpg": "http://2.56.213.189:8088/storage/palmburg/services/paid-3.jpg",
+               "webp": "http://2.56.213.189:8088/storage/palmburg/services/paid-3.jpg"
+           }
+       }
    ]
 }

@@ -11,7 +11,7 @@
   "introTitle":{
      "index":"title",
      "indexSlug":"subtitle",
-     "aboutUs":"description",
+     "aboutUs":"aboutUs",
      "rooms":"НОМЕРА",
      "services":"Услуги",
      "faq":"FAQ",

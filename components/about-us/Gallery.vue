@@ -21,14 +21,10 @@
               use(xlink:href="#angle")
 </template>
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'AppGallery',
-  props: {
-    aboutUsImg: {
-      type: Object,
-      default: () => null
-    }
-  },
   data () {
     return {
       hooperSettings: {
@@ -50,9 +46,10 @@ export default {
     }
   },
   computed: {
+    ...mapState('data', ['aboutUsImg', '$tt']),
     galleryImages () { return this.aboutUsImg?.galery ?? [] },
     translate () {
-      return this.$t('aboutUs')
+      return this.$tt('aboutUs')
     }
   },
   methods: {

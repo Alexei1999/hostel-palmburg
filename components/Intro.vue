@@ -11,15 +11,15 @@
       .container
         .intro__content
           h1.intro__title {{ getPageName }}
-          p.intro__slug {{ this.$t('introTitle').indexSlug }}
-          p.intro__subtitle {{ this.$t('introTitle').subtitle }}
+          p.intro__slug {{ this.$tt('introTitle.indexSlug') }}
+          p.intro__subtitle {{ this.$tt('introTitle.subtitle') }}
         .intro__footer
           span.intro__btn.btn.btn--secondary
-            button(@click="toggleBookingModal") {{ this.$t('common').booking }}
+            button(@click="toggleBookingModal") {{ this.$tt('common.booking') }}
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 import { introBackgrounds } from '@/content/introBackgrounds'
 
 export default {
@@ -27,14 +27,11 @@ export default {
   data () {
     return {
       currentPageTitle: '',
-      introBackgrounds: '',
-      roomsData: null
+      introBackgrounds: ''
     }
   },
-  async fetch () {
-    this.roomsData = await this.$axios.$get('/rooms.json')
-  },
   computed: {
+    ...mapState('data', ['$tt', 'roomsData']),
     getRouterParam () {
       return this.$route.params.id
     },
@@ -50,7 +47,7 @@ export default {
         }
       }
       return {
-        title: this.$t(`roomsTitles.${param}`),
+        title: this.$tt(`roomsTitles.${param}`),
         image: `intro--${param}`
       }
     },
@@ -64,17 +61,17 @@ export default {
       }
       switch (routeName) {
         case 'index':
-          return this.$t('introTitle.index')
+          return this.$tt('introTitle.index')
         case 'about-us':
-          return this.$t('introTitle.aboutUs')
+          return this.$tt('introTitle.aboutUs')
         case 'rooms':
-          return this.$t('introTitle.rooms')
+          return this.$tt('introTitle.rooms')
         case 'services':
-          return this.$t('introTitle.services')
+          return this.$tt('introTitle.services')
         case 'faq':
-          return this.$t('introTitle.faq')
+          return this.$tt('introTitle.faq')
         case 'contacts':
-          return this.$t('introTitle.contacts')
+          return this.$tt('introTitle.contacts')
         case 'rooms-id':
           return this.getRoomName.title
         default:

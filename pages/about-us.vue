@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import AppAboutUsCard from '~/components/about-us/AboutUsCard'
 import AppGallery from '~/components/about-us/Gallery'
 
@@ -15,15 +16,8 @@ export default {
     AppGallery,
     AppAboutUsCard
   },
-  async asyncData ({ $axios }) {
-    return {
-      aboutUsImg: await $axios.$get('/about-us-img.json')
-    }
-  },
-  data () {
-    return {
-      aboutUsImg: null
-    }
+  computed: {
+    ...mapState('data', ['aboutUsImg'])
   }
 }
 </script>

@@ -16,7 +16,6 @@ import AppLogo from '~/components/Logo'
 import AppIntro from '~/components/Intro'
 import AppFooter from '~/components/layout/Footer'
 
-// const baseUrl = ''
 const baseUrl = 'http://2.56.213.189:8090'
 
 export default {

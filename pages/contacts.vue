@@ -36,6 +36,10 @@
                   svg.card-about__contact-icon
                     use(xlink:href="#map-marker")
                   | {{ translate.common.address }}
+                .card-about__contact(style="margin: 15px 0 0")
+                  div(style="height: 42px; width: 63px; overflow: hidden;")
+                    img(src="@/assets/images/logo.png" style="height: 100px; margin-top: -29px; margin-left: -19px;")
+
     .quote
       .container
         .wrapper

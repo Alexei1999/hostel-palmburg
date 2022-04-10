@@ -76,7 +76,7 @@ export default {
           const result = str.split('.').reduce((obj, field) => obj[field], val)
           return result
         } catch {
-          return val
+          return str
         }
       }
 

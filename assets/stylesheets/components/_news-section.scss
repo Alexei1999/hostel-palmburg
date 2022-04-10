@@ -1,9 +1,31 @@
-.news {
+.news-section {
+  cursor: pointer;
+  &--hover-normal {
+    background: $--gray;
+    &:hover {
+      background: $--white;
+  
+      .news__image > img {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &--hover-border {
+    background: $--white;
+    border-bottom: 0px solid $--white;
+
+    &:hover {
+      border-bottom-width: 5px;
+      border-color: $--main;
+    }
+  }
+
   font-family: Comfortaa;
   display: flex;
   min-height: 160px;
 
   &__image {
+    overflow: hidden;
     width: 190px;
     
     & > img {
@@ -34,7 +56,7 @@
 }
 
 @media screen and (max-width: 992px) {
-  .news {
+  .news-section {
     flex-direction: column;
     &__image {
       width: 100%;

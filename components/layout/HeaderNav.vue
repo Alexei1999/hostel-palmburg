@@ -21,7 +21,7 @@ export default {
   computed: {
     ...mapState('data', ['$tt']),
     links () {
-      return linksNav
+      return linksNav.filter(link => !link.footerOnly)
     },
     actualLocale () {
       return this.$i18n.locale

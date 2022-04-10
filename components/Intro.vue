@@ -31,14 +31,14 @@ export default {
     }
   },
   computed: {
-    ...mapState('data', ['$tt', 'roomsData']),
+    ...mapState('data', ['$tt', 'roomsData', 'news']),
     getRouterParam () {
       return this.$route.params.id
     },
     getRoomName () {
       const param = this.getRouterParam
 
-      const slugs = Object.values(this.roomsData?.map(room => room.slug) ?? {})
+      const slugs = this.roomsData?.map(room => room.slug) ?? []
 
       if (!slugs.includes(param)) {
         return {
@@ -48,6 +48,23 @@ export default {
       }
       return {
         title: this.$tt(`roomsTitles.${param}`),
+        image: `intro--${param}`
+      }
+    },
+    getNewsName () {
+      const param = this.getRouterParam
+
+      const news = this.news?.find(news => news.slug === param)
+
+      if (!news) {
+        return {
+          title: 'An error has occurred',
+          image: 'intro--error-page'
+        }
+      }
+
+      return {
+        title: news.title[this.$i18n.locale],
         image: `intro--${param}`
       }
     },
@@ -72,8 +89,12 @@ export default {
           return this.$tt('introTitle.faq')
         case 'contacts':
           return this.$tt('introTitle.contacts')
+        case 'news':
+          return this.$tt('introTitle.news')
         case 'rooms-id':
           return this.getRoomName.title
+        case 'news-id':
+          return this.getNewsName.title
         default:
           return routeName
       }
@@ -98,18 +119,29 @@ export default {
           return 'intro--faq'
         case 'contacts':
           return 'intro--contacts '
+        case 'news':
+          return 'intro--news '
         case 'rooms-id':
           return this.getRoomName.image
+        case 'news-id':
+          return this.getNewsName.image
         default:
           return 'intro--error-page'
       }
     },
     getBgImage () {
       const param = this.getRouterParam
+
       const room = this.roomsData?.find(room => room.slug === param)
 
       if (room?.background?.jpg) {
         return room.background.jpg
+      }
+
+      const news = this.news?.find(news => news.slug === param)
+
+      if (news?.image?.jpg) {
+        return news.image.jpg
       }
 
       const route = this.$route.path

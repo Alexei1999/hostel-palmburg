@@ -4,7 +4,7 @@
       .wrapper.wrapper--slider
         h2.title {{this.$tt('reviewsSection.titleAll')}}
         .card-slider
-          hooper(ref="carousel" :wheelControl="false" @slide="checkSlideOption" :key="reviews")
+          hooper(ref="carousel" :wheelControl="false" @slide="checkSlideOption" :key="Boolean(reviews)")
             slide(v-for="(review,idx) in reviews" :key="idx")
               .review-card__container
                 .review-card

@@ -4,7 +4,7 @@
       .wrapper.wrapper--slider
         h2.title {{this.$tt('roomsSection.titleAll')}}
         .card-slider
-          hooper(ref="carousel" :settings="hooperSettings" @slide="checkSlideOption" :key="roomsData")
+          hooper(ref="carousel" :settings="hooperSettings" @slide="checkSlideOption" :key="Boolean(roomsData)")
             slide(v-for="(room,idx) in rooms" :key="idx").card-slider__slide
               .room-card
                 .room-card__wrapper

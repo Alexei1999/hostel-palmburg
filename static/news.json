@@ -1,5 +1,6 @@
 [
    {
+      "slug": "new-1",
       "image":{
          "jpg":"http://2.56.213.189:8088/storage/palmburg/news/1.jpg",
          "webp":"http://2.56.213.189:8088/storage/palmburg/news/1.jpg"
@@ -19,6 +20,7 @@
       }
    },
    {
+      "slug": "new-2",
       "image":{
          "jpg":"http://2.56.213.189:8088/storage/palmburg/news/2.jpg",
          "webp":"http://2.56.213.189:8088/storage/palmburg/news/2.jpg"

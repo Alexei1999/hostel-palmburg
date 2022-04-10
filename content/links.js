@@ -46,5 +46,14 @@ export const linksNav = [
     },
     path: '/contacts',
     exact: true
+  },
+  {
+    name: {
+      ru: 'Новости',
+      en: 'News'
+    },
+    path: '/news',
+    exact: true,
+    footerOnly: true
   }
 ]

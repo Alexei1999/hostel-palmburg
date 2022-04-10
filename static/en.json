@@ -5,6 +5,7 @@
       "booking":"Book now",
       "availability":"Show availability",
       "back":"Back",
+      "toHomepage": "Back to homepage",
       "phone":"555",
       "address":"eng address"
    },
@@ -16,7 +17,8 @@
       "services":"Services",
       "faq":"FAQ",
       "contacts":"Our Contacts",
-      "subtitle":"Welcome to the most modern and maritime hostel in Kaliningrad on the banks of the Pregolya River."
+      "subtitle":"Welcome to the most modern and maritime hostel in Kaliningrad on the banks of the Pregolya River.",
+      "news": "News"
    },
    "documents":{
       "title":"Documents",

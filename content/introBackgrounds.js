@@ -29,30 +29,8 @@ export const introBackgrounds = {
     webp: require('@/assets/images/bg/bg1.jpg?resize&format=webp')
     // // avif: require('@/assets/images/bg/bg1.jpg?resize&format=avif')
   },
-  '/rooms/two-room': {
-    jpg: require('@/assets/images/bg/bgr2.jpg?resize'),
-    webp: require('@/assets/images/bg/bgr2.jpg?resize&format=webp')
-    // // avif: require('@/assets/images/bg/bgr2.jpg?resize&format=avif')
-  },
-  '/rooms/six-room': {
-    jpg: require('@/assets/images/bg/bgr6.jpg?resize'),
-    webp: require('@/assets/images/bg/bgr6.jpg?resize&format=webp')
-    // // avif: require('@/assets/images/bg/bgr6.jpg?resize&format=avif')
-  },
-  '/rooms/eight-room': {
-    jpg: require('@/assets/images/bg/bgr8.jpg?resize'),
-    webp: require('@/assets/images/bg/bgr8.jpg?resize&format=webp')
-    // // avif: require('@/assets/images/bg/bgr8.jpg?resize&format=avif')
-  },
-  '/rooms/ten-room': {
-    jpg: require('@/assets/images/bg/bgr10.jpg?resize'),
-    webp: require('@/assets/images/bg/bgr10.jpg?resize&format=webp')
-    // // avif: require('@/assets/images/bg/bgr10.jpg?resize&format=avif')
-  },
-  '/rooms/twelve-room': {
-    jpg: require('@/assets/images/bg/bgr12.jpg?resize'),
-    webp: require('@/assets/images/bg/bgr12.jpg?resize&format=webp')
-    // // avif: require('@/assets/images/bg/bgr12.jpg?resize&format=avif')
+  '/news': {
+    jpg: require('@/assets/images/bg/bg7.jpg?resize'),
+    webp: require('@/assets/images/bg/bg7.jpg?resize&format=webp')
   }
-
 }

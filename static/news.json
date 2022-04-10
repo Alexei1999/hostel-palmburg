@@ -1,40 +1,40 @@
 [
-    {
-        "image": {
-            "jpg": "http://2.56.213.189:8088/storage/palmburg/news/1.jpg",
-            "webp": "http://2.56.213.189:8088/storage/palmburg/news/1.jpg"
-        },
-        "date": "10-04-2022",
-        "title": {
-            "ru": "rus title1",
-            "en": "eng title1"
-        },
-        "description": {
-            "ru": "rus descr1",
-            "en": "eng descr1"
-        },
-        "content": {
-            "ru": "rus content1",
-            "en": "eng content1"
-        }
-    },
-    {
-        "image": {
-            "jpg": "http://2.56.213.189:8088/storage/palmburg/news/2.jpg",
-            "webp": "http://2.56.213.189:8088/storage/palmburg/news/2.jpg"
-        },
-        "date": "10-04-2022",
-        "title": {
-            "ru": "rus title2",
-            "en": "eng title2"
-        },
-        "description": {
-            "ru": "rus descr2",
-            "en": "eng descr2"
-        },
-        "content": {
-            "ru": "rus content2",
-            "en": "eng content2"
-        }
-    }
+   {
+      "image":{
+         "jpg":"http://2.56.213.189:8088/storage/palmburg/news/1.jpg",
+         "webp":"http://2.56.213.189:8088/storage/palmburg/news/1.jpg"
+      },
+      "date":"10-04-2022",
+      "title":{
+         "ru":"rus title1",
+         "en":"eng title1"
+      },
+      "description":{
+         "ru":"rus descr1",
+         "en":"eng descr1"
+      },
+      "content":{
+         "ru":"rus content1",
+         "en":"eng content1"
+      }
+   },
+   {
+      "image":{
+         "jpg":"http://2.56.213.189:8088/storage/palmburg/news/2.jpg",
+         "webp":"http://2.56.213.189:8088/storage/palmburg/news/2.jpg"
+      },
+      "date":"10-04-2022",
+      "title":{
+         "ru":"rus title2",
+         "en":"eng title2"
+      },
+      "description":{
+         "ru":"rus descr2",
+         "en":"eng descr2"
+      },
+      "content":{
+         "ru":"rus content2",
+         "en":"eng content2"
+      }
+   }
 ]

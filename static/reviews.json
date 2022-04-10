@@ -1,47 +1,47 @@
 [
-  {
-    "slug": "review1",
-    "photo": {
-      "jpg": "http://2.56.213.189:8088//storage/palmburg/rooms/1-1.jpg",
-      "webp": "http://2.56.213.189:8088//storage/palmburg/rooms/1-1.jpg"
-    },
-    "name": {
-      "ru": "Марина",
-      "en": "Marina"
-    },
-    "text": {
-      "ru": "«Идеальная чистота. Хостел новейший. Очень стильный современный интерьер. Даже посудомойка на кухне есть)) в целом было очень приятно находиться. Администраторы прекрасные.»",
-      "en": "«Perfect cleanliness. Newest hostel. Very stylish and modern interior. Even the kitchen is full of dishes. Overall it was very pleasant to be located. The administrators are great.»" 
-    }
-  }, 
-  {
-    "slug": "review1",
-    "photo": {
-      "jpg": "http://2.56.213.189:8088//storage/palmburg/rooms/1-1.jpg",
-      "webp": "http://2.56.213.189:8088//storage/palmburg/rooms/1-1.jpg"
-    },
-    "name": {
-      "ru": "Марина",
-      "en": "Marina"
-    },
-    "text": {
-      "ru": "«Идеальная чистота. Хостел новейший. Очень стильный современный интерьер. Даже посудомойка на кухне есть)) в целом было очень приятно находиться. Администраторы прекрасные.»",
-      "en": "«Perfect cleanliness. Newest hostel. Very stylish and modern interior. Even the kitchen is full of dishes. Overall it was very pleasant to be located. The administrators are great.»" 
-    }
-  }, 
-  {
-    "slug": "review1",
-    "photo": {
-      "jpg": "http://2.56.213.189:8088//storage/palmburg/rooms/1-1.jpg",
-      "webp": "http://2.56.213.189:8088//storage/palmburg/rooms/1-1.jpg"
-    },
-    "name": {
-      "ru": "Марина",
-      "en": "Marina"
-    },
-    "text": {
-      "ru": "«Идеальная чистота. Хостел новейший. Очень стильный современный интерьер. Даже посудомойка на кухне есть)) в целом было очень приятно находиться. Администраторы прекрасные.»",
-      "en": "«Perfect cleanliness. Newest hostel. Very stylish and modern interior. Even the kitchen is full of dishes. Overall it was very pleasant to be located. The administrators are great.»" 
-    }
-  }
+   {
+      "slug":"review1",
+      "photo":{
+         "jpg":"http://2.56.213.189:8088//storage/palmburg/rooms/1-1.jpg",
+         "webp":"http://2.56.213.189:8088//storage/palmburg/rooms/1-1.jpg"
+      },
+      "name":{
+         "ru":"Марина",
+         "en":"Marina"
+      },
+      "text":{
+         "ru":"«Идеальная чистота. Хостел новейший. Очень стильный современный интерьер. Даже посудомойка на кухне есть)) в целом было очень приятно находиться. Администраторы прекрасные.»",
+         "en":"«Perfect cleanliness. Newest hostel. Very stylish and modern interior. Even the kitchen is full of dishes. Overall it was very pleasant to be located. The administrators are great.»"
+      }
+   },
+   {
+      "slug":"review1",
+      "photo":{
+         "jpg":"http://2.56.213.189:8088//storage/palmburg/rooms/1-1.jpg",
+         "webp":"http://2.56.213.189:8088//storage/palmburg/rooms/1-1.jpg"
+      },
+      "name":{
+         "ru":"Марина",
+         "en":"Marina"
+      },
+      "text":{
+         "ru":"«Идеальная чистота. Хостел новейший. Очень стильный современный интерьер. Даже посудомойка на кухне есть)) в целом было очень приятно находиться. Администраторы прекрасные.»",
+         "en":"«Perfect cleanliness. Newest hostel. Very stylish and modern interior. Even the kitchen is full of dishes. Overall it was very pleasant to be located. The administrators are great.»"
+      }
+   },
+   {
+      "slug":"review1",
+      "photo":{
+         "jpg":"http://2.56.213.189:8088//storage/palmburg/rooms/1-1.jpg",
+         "webp":"http://2.56.213.189:8088//storage/palmburg/rooms/1-1.jpg"
+      },
+      "name":{
+         "ru":"Марина",
+         "en":"Marina"
+      },
+      "text":{
+         "ru":"«Идеальная чистота. Хостел новейший. Очень стильный современный интерьер. Даже посудомойка на кухне есть)) в целом было очень приятно находиться. Администраторы прекрасные.»",
+         "en":"«Perfect cleanliness. Newest hostel. Very stylish and modern interior. Even the kitchen is full of dishes. Overall it was very pleasant to be located. The administrators are great.»"
+      }
+   }
 ]

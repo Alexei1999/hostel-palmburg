@@ -1,23 +1,23 @@
 <template lang="pug">
-  .rooms_section
+  .reviews_section
     .container
       .wrapper.wrapper--slider
-        h2.title {{this.$tt('roomsSection.titleAll')}}
+        h2.title {{this.$tt('reviewsSection.titleAll')}}
         .card-slider
-          hooper(ref="carousel" :settings="hooperSettings" @slide="checkSlideOption" :key="roomsData")
-            slide(v-for="(room,idx) in rooms" :key="idx").card-slider__slide
-              .room-card
-                .room-card__wrapper
-                  .room-card__img
-                    picture
-                      //- source(type="image/webp" :srcSet="room.imgSrc.webp.srcSet")
-                      //- source(type="image/avif" :srcSet="room.imgSrc.avif.srcSet")
-                      //- source(type="image/jpeg" :srcSet="room.imgSrc.jpg.srcSet")
-                      img(:src="room.imgSrc.jpg")
-                  h3.room-card__title {{room.title[actualLocale]}}
-                  .room-card__description {{room.content[actualLocale]}}
-                  span.room-card__btn.btn
-                    nuxt-link(:to="localePath('/rooms/'+ room.slug)" ) {{ translate.learnMore }}
+          hooper(ref="carousel" :wheelControl="false" @slide="checkSlideOption" :key="reviews")
+            slide(v-for="(review,idx) in reviews" :key="idx")
+              .review-card__container
+                .review-card
+                  .review-card__wrapper
+                    .review-card__img
+                      picture
+                        //- source(type="image/webp" :srcSet="room.imgSrc.webp.srcSet")
+                        //- source(type="image/avif" :srcSet="room.imgSrc.avif.srcSet")
+                        //- source(type="image/jpeg" :srcSet="room.imgSrc.jpg.srcSet")
+                        img(:src="review.photo.jpg")
+                  h3.review-card__title {{review.name[actualLocale]}}
+                  .review-card__description {{review.text[actualLocale]}}
+
         .card-slider__buttons
           button(@click.prevent="slidePrev" ref="prevBtn").card-slider__btn
             span
@@ -34,7 +34,7 @@
 import { mapState } from 'vuex'
 
 export default {
-  name: 'AppRoomsSection',
+  name: 'AppReviews',
   props: {
     isFiltered: {
       type: Boolean,
@@ -43,33 +43,13 @@ export default {
   },
   data () {
     return {
-      roomCards: [],
-      hooperSettings: {
-        pagination: 'no',
-        trimWhiteSpace: true,
-        wheelControl: false,
-        breakpoints: {
-          1590: {
-            itemsToShow: 3
-          },
-          992: {
-            itemsToShow: 2
-          },
-          768: {
-            itemsToShow: 1
-          }
-        }
-      }
+      reviewsCards: []
     }
   },
   computed: {
-    ...mapState('data', ['roomsData', '$tt']),
+    ...mapState('data', ['reviews', '$tt']),
     sectionTitle () {
       return this.title
-    },
-    rooms () {
-      const routeParam = this.$route.params.id ? this.$route.params.id : ''
-      return this.roomsData?.filter(room => room.slug !== routeParam)
     },
     translate () {
       return this.$tt('common')

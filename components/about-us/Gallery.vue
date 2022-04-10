@@ -2,7 +2,7 @@
   .gallery
     .wrapper
       h2.title {{ translate.galleryTitle }}
-      hooper.gallery__slider(ref="carousel1" :settings="hooperSettings" @slide="checkSlideOption")
+      hooper.gallery__slider(ref="carousel1" :settings="hooperSettings" @slide="checkSlideOption" :key="galleryImages")
         slide(v-for="(img,i) in galleryImages" :key="i").gallery__slide
           .gallery__img
             picture
@@ -69,7 +69,7 @@ export default {
         prevButton.disabled = true
         nextButton.disabled = false
       }
-      if (aboutSlide.currentSlide === slider.slidesCount - Math.min(slider.config.itemsToShow, slider.slidesCount)) {
+      if (aboutSlide.currentSlide === (slider.slidesCount - Math.min(slider.config.itemsToShow, slider.slidesCount))) {
         nextButton.disabled = true
         prevButton.disabled = false
       }

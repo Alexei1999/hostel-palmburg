@@ -7,26 +7,23 @@ export const state = () => ({
   aboutUsImg: null,
   faq: null,
   services: null,
+  sharesData: null,
+  reviews: null,
+  news: null,
 
   $tt: val => val
 })
 
-export const getters = {
-  whyUsImg: state => state.whyUsImg,
-  roomsData: state => state.roomsData,
-  aboutUsImg: state => state.aboutUsImg,
-  services: state => state.services,
-  faq: state => state.faq,
-  $tt: state => state.$tt
-}
-
 export const mutations = {
   [SET_DATA]: (state, payload) => {
+    state.sharesData = payload.sharesData
     state.whyUsImg = payload.whyUsImg
     state.roomsData = payload.roomsData
+    state.reviews = payload.reviews
     state.aboutUsImg = payload.aboutUsImg
     state.faq = payload.faq
     state.services = payload.services
+    state.news = payload.news
   },
   [SET_TRANSLATE]: (state, payload) => {
     state.$tt = payload

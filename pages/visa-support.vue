@@ -2,7 +2,7 @@
   .visa-support
     .container
       .wrapper
-        iframe(frameborder="0" name="bplformtopiframewindow" width="100%" scrolling="no" style="min-height: 700px;" src="https://www.bpltech.pro/invitation/kgdhostels/ru")
+        iframe(frameborder="0" name="bplformtopiframewindow" width="100%" scrolling="no" style="min-height: 700px;" :src="'https://www.bpltech.pro/invitation/kgdhostels/' + (actualLocale ? actualLocale : 'en')")
         script(type="text/javascript" src="https://www.bpltech.pro/public/js/iframeResizer.min.js" @load="setResizerLoaded")
 </template>
 
@@ -16,6 +16,9 @@ export default {
     }
   },
   computed: {
+    actualLocale () {
+      return this.$i18n.locale
+    },
     canResize () {
       return this.isMounted && this.isResizerLoaded
     }

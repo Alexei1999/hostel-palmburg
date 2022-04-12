@@ -1,10 +1,10 @@
 <template lang="pug">
-  .faq
+  .faq(v-if="questions && questions.length")
     .container
       .wrapper(:style="{'padding-top': '0'}")
         app-shares
         h2.title(:style="{'text-transform': 'uppercase'}") {{ $tt('newsSection.titleAll') }}
-        app-news-section(:news="news")
+        app-news-section(:news="questions")
 </template>
 
 <script>

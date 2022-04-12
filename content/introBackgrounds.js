@@ -32,5 +32,9 @@ export const introBackgrounds = {
   '/news': {
     jpg: require('@/assets/images/bg/bg7.jpg?resize'),
     webp: require('@/assets/images/bg/bg7.jpg?resize&format=webp')
+  },
+  '/visa-support': {
+    jpg: require('@/assets/images/bg/bg8.jpg?resize'),
+    webp: require('@/assets/images/bg/bg8.jpg?resize&format=webp')
   }
 }

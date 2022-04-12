@@ -53,6 +53,14 @@ export const linksNav = [
       en: 'News'
     },
     path: '/news',
+    exact: true
+  },
+  {
+    name: {
+      en: 'Visa support',
+      ru: 'Визовая поддержка'
+    },
+    path: '/visa-support',
     exact: true,
     footerOnly: true
   }

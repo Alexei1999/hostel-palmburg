@@ -91,6 +91,8 @@ export default {
           return this.$tt('introTitle.contacts')
         case 'news':
           return this.$tt('introTitle.news')
+        case 'visa-support':
+          return this.$tt('introTitle.visaSupport')
         case 'rooms-id':
           return this.getRoomName.title
         case 'news-id':

@@ -32,6 +32,9 @@ export default {
         common: this.$tt('common'),
         whyUs: this.$tt('whyUs')
       }
+    },
+    canRender () {
+      return Boolean(this.whyUsImg)
     }
   }
 }

@@ -1,5 +1,5 @@
 <template lang="pug">
-  .faqSection
+  .faqSectio(v-if="newsSliced && newsSliced.length")
     .container
       .wrapper(:style="{'padding-bottom': '0'}")
         h2.title(:style="{'text-transform': 'uppercase'}") {{ $tt('newsSection.titleAll') }}

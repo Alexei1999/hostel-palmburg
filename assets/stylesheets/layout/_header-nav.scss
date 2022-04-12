@@ -61,3 +61,18 @@
     display: none;
   }
 }
+
+@media screen and (max-width: 1700px) {
+  .header-nav {
+
+    &__link {
+        font-size: 15px;
+    }
+    &__booking-btn a {
+      font-size: 15px !important;
+    }
+    &__i18n, &__i18n-btn {
+      font-size: 15px;
+    }
+  } 
+}

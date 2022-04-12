@@ -1,5 +1,5 @@
 <template lang="pug">
-  .rooms_section
+  .rooms_section(v-if="canRender")
     .container
       .wrapper.wrapper--slider
         h2.title {{this.$tt('roomsSection.titleAll')}}
@@ -76,6 +76,9 @@ export default {
     },
     actualLocale () {
       return this.$i18n.locale
+    },
+    canRender () {
+      return this.rooms?.length > 0
     }
   },
   methods: {
@@ -95,7 +98,11 @@ export default {
         prevButton.disabled = true
         nextButton.disabled = false
       }
-      if (aboutSlide.currentSlide === (slider.slidesCount - Math.min(slider.config.itemsToShow, slider.slidesCount))) {
+      if (
+        aboutSlide.currentSlide ===
+        slider.slidesCount -
+          Math.min(slider.config.itemsToShow, slider.slidesCount)
+      ) {
         nextButton.disabled = true
         prevButton.disabled = false
       }

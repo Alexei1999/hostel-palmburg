@@ -1,5 +1,5 @@
 <template lang="pug">
-  .reviews_section
+  .reviews_section(v-if="reviews && reviews.length")
     .container
       .wrapper.wrapper--slider
         h2.title {{this.$tt('reviewsSection.titleAll')}}
@@ -75,7 +75,11 @@ export default {
         prevButton.disabled = true
         nextButton.disabled = false
       }
-      if (aboutSlide.currentSlide === (slider.slidesCount - Math.min(slider.config.itemsToShow, slider.slidesCount))) {
+      if (
+        aboutSlide.currentSlide ===
+        slider.slidesCount -
+          Math.min(slider.config.itemsToShow, slider.slidesCount)
+      ) {
         nextButton.disabled = true
         prevButton.disabled = false
       }

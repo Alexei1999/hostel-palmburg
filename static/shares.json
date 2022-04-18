@@ -1,20 +1,14 @@
 {
-  "share1":{
-     "image":{
-        "jpg":"http://2.56.213.189:8088//storage/palmburg/rooms/1-1.jpg",
-        "webp":"http://2.56.213.189:8088//storage/palmburg/rooms/1-1.jpg"
-     }
+  "share1": {
+    "image": {
+      "jpg": "http://2.56.213.189:8088/storage/palmburg/shares/1.jpg",
+      "webp": "http://2.56.213.189:8088/storage/palmburg/shares/1.jpg"
+    }
   },
-  "share2":{
-     "image":{
-        "jpg":"http://2.56.213.189:8088//storage/palmburg/rooms/1-1.jpg",
-        "webp":"http://2.56.213.189:8088//storage/palmburg/rooms/1-1.jpg"
-     }
-  },
-  "share3":{
-     "image":{
-        "jpg":"http://2.56.213.189:8088//storage/palmburg/rooms/1-1.jpg",
-        "webp":"http://2.56.213.189:8088//storage/palmburg/rooms/1-1.jpg"
-     }
+  "share2": {
+    "image": {
+      "jpg": "http://2.56.213.189:8088/storage/palmburg/shares/2.jpg",
+      "webp": "http://2.56.213.189:8088/storage/palmburg/shares/2.jpg"
+    }
   }
 }

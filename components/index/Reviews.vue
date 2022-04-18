@@ -1,12 +1,12 @@
 <template lang="pug">
   .reviews_section(v-if="reviews && reviews.length")
-    .container
-      .wrapper.wrapper--slider
+    .container(ref="container")
+      .wrapper.wrapper--slider(style="padding-bottom: 40px;")
         h2.title {{this.$tt('reviewsSection.titleAll')}}
         .card-slider
           hooper(ref="carousel" :wheelControl="false" @slide="checkSlideOption" :key="Boolean(reviews)")
             slide(v-for="(review,idx) in reviews" :key="idx")
-              .review-card__container
+              .review-card__container(:style="{ 'transition': 'visibility, height 0.1s', 'visibility': currentSlide !== idx ? 'hidden' : 'inherit', 'height': currentSlide !== idx ? '0px' : 'auto' }")
                 .review-card
                   .review-card__wrapper
                     .review-card__img
@@ -27,6 +27,9 @@
             span
               svg
                 use(xlink:href="#angle")
+        .booking(style="padding-top: 46px; display: flex; justify-content: center;")
+          picture
+            img(src="@/assets/images/booking.png" style="width: 244.54px; height: 54px;")
 
 </template>
 
@@ -43,7 +46,8 @@ export default {
   },
   data () {
     return {
-      reviewsCards: []
+      reviewsCards: [],
+      currentSlide: -1
     }
   },
   computed: {
@@ -59,16 +63,31 @@ export default {
     }
   },
   methods: {
+    scrollToReviews () {
+      this.$nextTick(() => {
+        this.$refs.container.scrollIntoView({
+          behavior: 'smooth',
+          block: 'end'
+        })
+      })
+    },
     slidePrev () {
       this.$refs.carousel.slidePrev()
+      this.scrollToReviews()
     },
     slideNext () {
       this.$refs.carousel.slideNext()
+      this.scrollToReviews()
     },
     checkSlideOption (aboutSlide) {
       const slider = this.$refs.carousel
       const nextButton = this.$refs.nextBtn
       const prevButton = this.$refs.prevBtn
+
+      if (slider.currentSlide !== null || !isNaN(slider.currentSlide)) {
+        this.currentSlide = slider.currentSlide
+      }
+
       nextButton.disabled = false
       prevButton.disabled = false
       if (aboutSlide.currentSlide === 0) {

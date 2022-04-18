@@ -3,7 +3,7 @@
     .container
       .wrapper(:style="{'padding-top': '0'}")
         app-shares
-        h2.title(:style="{'text-transform': 'uppercase'}") {{ $tt('newsSection.titleAll') }}
+        h2.title(:style="{'text-transform': 'uppercase', 'margin-top': '40px'}") {{ $tt('newsSection.titleAll') }}
         app-news-section(:news="questions")
 </template>
 

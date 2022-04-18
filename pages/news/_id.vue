@@ -51,7 +51,7 @@ export default {
     },
     newsSLiced () {
       const filteredNews = this.news?.filter(news => news.slug !== this.$route.params.id)
-      return filteredNews?.slice(0, 3) ?? []
+      return filteredNews?.slice(0, 5) ?? []
     },
     translate () {
       return this.$tt('common')

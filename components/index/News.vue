@@ -20,7 +20,7 @@ export default {
   computed: {
     ...mapState('data', ['$tt', 'news']),
     newsSliced () {
-      return this.news?.slice(0, 3) ?? []
+      return this.news?.slice(0, 5) ?? []
     }
   }
 }

@@ -10,6 +10,7 @@ export const state = () => ({
   sharesData: null,
   reviews: null,
   news: null,
+  v: null,
 
   $tt: val => val
 })
@@ -24,6 +25,7 @@ export const mutations = {
     state.faq = payload.faq
     state.services = payload.services
     state.news = payload.news
+    state.rating = payload.rating
   },
   [SET_TRANSLATE]: (state, payload) => {
     state.$tt = payload

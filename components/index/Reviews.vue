@@ -28,8 +28,13 @@
               svg
                 use(xlink:href="#angle")
         .booking(style="padding-top: 46px; display: flex; justify-content: center;")
-          picture
-            img(src="@/assets/images/booking.png" style="width: 244.54px; height: 54px;")
+          .feedback(id="feedback")
+            .feedback__company
+              picture
+                img(src="@/assets/images/booking-logo.svg" alt="Логотип сервиса Booking.com")
+            p.feedback__text {{ rating.text[actualLocale] }}
+            span.feedback__num {{ rating.rating }}
+  </div>
 
 </template>
 
@@ -51,7 +56,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('data', ['reviews', '$tt']),
+    ...mapState('data', ['reviews', 'rating', '$tt']),
     sectionTitle () {
       return this.title
     },

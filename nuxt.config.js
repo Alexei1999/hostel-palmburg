@@ -25,14 +25,6 @@ export default {
         type: 'image/x-icon',
         href: '/favicon.ico'
       }
-    ],
-    script: [
-      {
-        src: '//widget.reservationsteps.ru/js/bnovo.js'
-      },
-      {
-        src: '/booking.js'
-      }
     ]
   },
 

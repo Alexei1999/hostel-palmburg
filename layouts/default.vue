@@ -1,5 +1,7 @@
 <template lang="pug">
   div
+    script(type="text/javascript" src="http://widget.reservationsteps.ru/js/bnovo.js")
+    script(type="text/javascript" src="/booking.js" defer: true)
     AppSprites
     AppHeader
     app-intro
@@ -36,6 +38,7 @@ export default {
       aboutUsImg: null,
       faq: null,
       services: null,
+      rating: null,
 
       ru: null,
       en: null
@@ -50,7 +53,8 @@ export default {
       reviews: await this.$axios.$get(`${baseUrl}/reviews.json`),
       faq: await this.$axios.$get(`${baseUrl}/faq.json`),
       services: await this.$axios.$get(`${baseUrl}/services.json`),
-      news: await this.$axios.$get(`${baseUrl}/news.json`)
+      news: await this.$axios.$get(`${baseUrl}/news.json`),
+      rating: await this.$axios.$get(`${baseUrl}/rating.json`)
     })
 
     this.ru = await this.$axios.$get(`${baseUrl}/ru.json`)

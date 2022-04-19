@@ -10,7 +10,6 @@
 </template>
 
 <script>
-
 import { mapActions, mapState } from 'vuex'
 
 export default {
@@ -22,7 +21,7 @@ export default {
       return this.$tt('common')
     },
     getLocale () {
-      return this.$i18n.locale
+      return this.$i18n.locale || 'en'
     }
   },
   methods: { ...mapActions('layout', ['toggleBookingModal']) }

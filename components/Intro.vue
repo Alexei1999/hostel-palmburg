@@ -134,16 +134,18 @@ export default {
     getBgImage () {
       const param = this.getRouterParam
 
-      const room = this.roomsData?.find(room => room.slug === param)
+      if (param) {
+        const room = this.roomsData?.find(room => room.slug === param)
 
-      if (room?.background?.jpg) {
-        return room.background.jpg
-      }
+        if (room?.background?.jpg) {
+          return room.background.jpg
+        }
 
-      const news = this.news?.find(news => news.slug === param)
+        const news = this.news?.find(news => news.slug === param)
 
-      if (news?.image?.jpg) {
-        return news.image.jpg
+        if (news?.image?.jpg) {
+          return news.image.jpg
+        }
       }
 
       const route = this.$route.path

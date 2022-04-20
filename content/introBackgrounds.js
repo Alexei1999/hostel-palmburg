@@ -1,7 +1,7 @@
 export const introBackgrounds = {
   '/': {
-    jpg: require('@/assets/images/bg/tmp/bg2.jpg?resize'),
-    webp: require('@/assets/images/bg/tmp/bg2.jpg?resize&format=webp')
+    jpg: require('@/assets/images/bg/tmp/bg6.jpg?resize'),
+    webp: require('@/assets/images/bg/tmp/bg6.jpg?resize&format=webp')
     // avif: require('@/assets/images/bg/bg3.jpg?resize&format=avif')
   },
   '/about-us': {

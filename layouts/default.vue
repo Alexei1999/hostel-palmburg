@@ -18,7 +18,8 @@ import AppLogo from '~/components/Logo'
 import AppIntro from '~/components/Intro'
 import AppFooter from '~/components/layout/Footer'
 
-const baseUrl = process.env.NODE_ENV === 'development' ? '' : 'http://2.56.213.189:8090'
+const baseUrl =
+  process.env.NODE_ENV === 'development' ? '' : 'http://2.56.213.189:8090'
 
 export default {
   components: {
@@ -54,7 +55,8 @@ export default {
       faq: await this.$axios.$get(`${baseUrl}/faq.json`),
       services: await this.$axios.$get(`${baseUrl}/services.json`),
       news: await this.$axios.$get(`${baseUrl}/news.json`),
-      rating: await this.$axios.$get(`${baseUrl}/rating.json`)
+      rating: await this.$axios.$get(`${baseUrl}/rating.json`),
+      newHostels: await this.$axios.$get(`${baseUrl}/newHostels.json`)
     })
 
     this.ru = await this.$axios.$get(`${baseUrl}/ru.json`)
@@ -68,19 +70,22 @@ export default {
   watch: {
     locale (val) {
       if (!val) {
-        return val => val
+        return () => typeof val === 'string' ? ' '.repeat(val.length) : ''
       }
 
       const translateFunction = (str) => {
+        const target = str || val
+
         if (!str || !val) {
-          return str
+          const target = (str || val)
+          return typeof target === 'string' ? ' '.repeat(target.length) : ''
         }
 
         try {
           const result = str.split('.').reduce((obj, field) => obj[field], val)
           return result
         } catch {
-          return str
+          return typeof target === 'string' ? ' '.repeat(target.length) : ''
         }
       }
 

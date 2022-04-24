@@ -10,9 +10,9 @@ export const state = () => ({
   sharesData: null,
   reviews: null,
   news: null,
-  v: null,
+  newHostels: null,
 
-  $tt: val => val
+  $tt: (val) => { return typeof val === 'string' ? '  '.repeat(val.length) : '' }
 })
 
 export const mutations = {
@@ -26,6 +26,7 @@ export const mutations = {
     state.services = payload.services
     state.news = payload.news
     state.rating = payload.rating
+    state.newHostels = payload.newHostels
   },
   [SET_TRANSLATE]: (state, payload) => {
     state.$tt = payload

@@ -1,52 +1,56 @@
 {
-  "titlaAll": {
+  "titleAll": {
     "ru": "Наши хостелы",
     "en": "Our hostels"
   },
   "hostel1": {
     "image": {
-      "jpg": "http://2.56.213.189:8088/storage/palmburg/shares/1.jpg",
-      "webp": "http://2.56.213.189:8088/storage/palmburg/shares/1.jpg"
+      "jpg": "http://2.56.213.189:8088/storage/palmburg/otherHostels/1.jpg",
+      "webp": "http://2.56.213.189:8088/storage/palmburg/otherHostels/1.jpg"
     },
     "title": {
-      "ru": "БОЛЬШЕ, ЧЕМ ДОМ – ХОСТЕЛ 2028",
-      "en": "MORE THAN A HOUSE – HOSTEL 2028"
+      "ru": "русский заголовок12345",
+      "en": "eng title"
     },
-    "href": "http://2.56.213.189:8087/",
+    "href": "http://2.56.213.189:8087",
     "content1": {
-      "ru": "Всем Privet и Добро пожаловать!",
-      "en": "Welcome to Privet!"
+      "ru": "абзац11",
+      "en": "eng section1"
     },
     "content2": {
-      "ru": "Мы - самый уютный и современный хостел в центре Калининграда. Мы - команда Hostel 2028.",
-      "en": "We are the most comfortable and modern hostel in the center of Kaliningrad. We are the team Hostel 2028."
+      "ru": "абзац2",
+      "en": "eng section2"
     },
     "content3": {
-      "ru": "У нас вы найдете все необходимое для хорошего отдыха. Удобная лаунж-зона, красивая и функциональная кухня, уютные номера встретят вас, если вы решите стать нашим гостем. В нашей команде заняты молодые и веселые ребята, которые всегда встретят вас с улыбкой и угостят кружкой кофе или чая. Мы уже подумали о вас, поэтому вы будете чувствовать себя как дома. Наши двери открыты для вас всегда и мы готовы ответить на любые ваши вопросы 24/7.",
-      "en": "You will find everything you need to enjoy a good stay. A luxurious lounge, a beautiful and functional kitchen, comfortable rooms will meet you, if you decide to become our guest. Our doors are open 24/7 to answer any of your questions."
+      "ru": "абзац3",
+      "en": "eng section3"
     }
   },
   "hostel2": {
+    "titleAll": {
+      "ru": "Наши хостелы",
+      "en": "Our hostels"
+    },
     "image": {
-      "jpg": "http://2.56.213.189:8088/storage/palmburg/shares/2.jpg",
-      "webp": "http://2.56.213.189:8088/storage/palmburg/shares/2.jpg"
+      "jpg": "http://2.56.213.189:8088/storage/palmburg/otherHostels/2.jpg",
+      "webp": "http://2.56.213.189:8088/storage/palmburg/otherHostels/2.jpg"
     },
     "title": {
-      "ru": "БОЛЬШЕ, ЧЕМ ДОМ – ХОСТЕЛ 2028",
-      "en": "MORE THAN A HOUSE – HOSTEL 2028"
+      "ru": "русский заголовок",
+      "en": "eng title2"
     },
-    "href": "http://2.56.213.189:8090/",
+    "href": "http://2.56.213.189:8089",
     "content1": {
-      "ru": "Добро пожаловать в самый морской и современный хостел Калининграда на берегу реки Преголя.",
-      "en": "Welcome to the most beautiful and modern hostel in Kaliningrad on the bank of the river Pregol."
+      "ru": "абзац1",
+      "en": "eng section1"
     },
     "content2": {
-      "ru": "Мы - команда Hostel Palmburg!",
-      "en": "We are the team Palmburg!"
+      "ru": "абзац2",
+      "en": "eng section2"
     },
     "content3": {
-      "ru": "У нас вы отдохнете от «бетонных джунглей». Чистый воздух и тишина пригорода встретят Вас, если Вы решите стать нашим гостем. Мы уже подумали о Вас заранее, поэтому Вы будете чувствовать себя как дома. Городская суета, шум и гам или дивные закаты у воды на фоне яхт? Выбор остаётся только за Вами.",
-      "en": "You will be at peace with the “concrete jungle”. A clean air and silence of the suburbs will meet you, if you decide to become our guest. We already thought about you, so you will feel like home. The city hustle, noise and smoke or beautiful sunset over the water on the background of yacht? Your choice is yours."
+      "ru": "абзац3",
+      "en": "eng section3"
     }
   }
 }

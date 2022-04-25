@@ -2,7 +2,7 @@
   .new-hostels(v-if="canRender")
     .container
       .wrapper
-        h2.title {{ this.newHostels && this.newHostels.titlaAll[this.$i18n.locale] }}
+        h2.title {{ this.newHostels && this.newHostels.titleAll[this.$i18n.locale] }}
         .new-hostels__cards
           .new-hostels__card(v-if="icons.hostel1")
             img.new-hostels__card-icon(:src='icons.hostel1')

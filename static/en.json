@@ -9,7 +9,7 @@
     "address": "Kaliningrad region, Guryevsky district, Pribrezhnoe village, st. Southern half ring, 4"
   },
   "introTitle": {
-    "news": "News",
+    "news": "News and suggestions",
     "index": "HOSTEL PALMBURG",
     "indexSlug": "A QUIET HAVEN AWAY FROM THE HUSTLE AND BUSTLE OF THE CITY",
     "aboutUs": "About us",
@@ -17,7 +17,8 @@
     "services": "Services",
     "faq": "FAQ",
     "contacts": "Our Contacts",
-    "subtitle": "Welcome to the most modern and maritime hostel in Kaliningrad on the banks of the Pregolya River."
+    "subtitle": "Welcome to the most modern and maritime hostel in Kaliningrad on the banks of the Pregolya River.",
+    "visaSupport": "Visa support"
   },
   "documents": {
     "title": "Documents",

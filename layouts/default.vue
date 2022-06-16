@@ -10,16 +10,16 @@
     booking-modal
 </template>
 <script>
-import { mapActions } from 'vuex'
-import BookingModal from '@/components/BookingModal'
-import AppSprites from '~/components/Sprites'
-import AppHeader from '~/components/layout/Header'
-import AppLogo from '~/components/Logo'
-import AppIntro from '~/components/Intro'
-import AppFooter from '~/components/layout/Footer'
+import { mapActions } from "vuex";
+import BookingModal from "@/components/BookingModal";
+import AppSprites from "~/components/Sprites";
+import AppHeader from "~/components/layout/Header";
+import AppLogo from "~/components/Logo";
+import AppIntro from "~/components/Intro";
+import AppFooter from "~/components/layout/Footer";
 
 const baseUrl =
-  process.env.NODE_ENV === 'development' ? '' : 'http://2.56.213.189:8090'
+  process.env.NODE_ENV === "development" ? "" : "http://2.56.213.189:8088";
 
 export default {
   components: {
@@ -28,9 +28,9 @@ export default {
     AppIntro,
     AppLogo,
     AppHeader,
-    AppSprites
+    AppSprites,
   },
-  data () {
+  data() {
     return {
       shares: null,
       whyUsImg: null,
@@ -42,10 +42,10 @@ export default {
       rating: null,
 
       ru: null,
-      en: null
-    }
+      en: null,
+    };
   },
-  async fetch () {
+  async fetch() {
     this.setData({
       aboutUsImg: await this.$axios.$get(`${baseUrl}/about-us-img.json`),
       whyUsImg: await this.$axios.$get(`${baseUrl}/why-us.json`),
@@ -56,42 +56,42 @@ export default {
       services: await this.$axios.$get(`${baseUrl}/services.json`),
       news: await this.$axios.$get(`${baseUrl}/news.json`),
       rating: await this.$axios.$get(`${baseUrl}/rating.json`),
-      newHostels: await this.$axios.$get(`${baseUrl}/newHostels.json`)
-    })
+      newHostels: await this.$axios.$get(`${baseUrl}/newHostels.json`),
+    });
 
-    this.ru = await this.$axios.$get(`${baseUrl}/ru.json`)
-    this.en = await this.$axios.$get(`${baseUrl}/en.json`)
+    this.ru = await this.$axios.$get(`${baseUrl}/ru.json`);
+    this.en = await this.$axios.$get(`${baseUrl}/en.json`);
   },
   computed: {
-    locale () {
-      return this.$i18n.locale === 'en' ? this.en : this.ru
-    }
+    locale() {
+      return this.$i18n.locale === "en" ? this.en : this.ru;
+    },
   },
   watch: {
-    locale (val) {
+    locale(val) {
       if (!val) {
-        return () => typeof val === 'string' ? ' '.repeat(val.length) : ''
+        return () => (typeof val === "string" ? " ".repeat(val.length) : "");
       }
 
       const translateFunction = (str) => {
-        const target = str || val
+        const target = str || val;
 
         if (!str || !val) {
-          const target = (str || val)
-          return typeof target === 'string' ? ' '.repeat(target.length) : ''
+          const target = str || val;
+          return typeof target === "string" ? " ".repeat(target.length) : "";
         }
 
         try {
-          const result = str.split('.').reduce((obj, field) => obj[field], val)
-          return result
+          const result = str.split(".").reduce((obj, field) => obj[field], val);
+          return result;
         } catch {
-          return typeof target === 'string' ? ' '.repeat(target.length) : ''
+          return typeof target === "string" ? " ".repeat(target.length) : "";
         }
-      }
+      };
 
-      this.setTranslate(translateFunction)
-    }
+      this.setTranslate(translateFunction);
+    },
   },
-  methods: { ...mapActions('data', ['setData', 'setTranslate']) }
-}
+  methods: { ...mapActions("data", ["setData", "setTranslate"]) },
+};
 </script>

@@ -2,8 +2,8 @@
   {
     "slug": "review1",
     "photo": {
-      "jpg": "http://2.56.213.189:8088/storage/palmburg/reviews/1.jpg",
-      "webp": "http://2.56.213.189:8088/storage/palmburg/reviews/1.jpg"
+      "jpg": "http://89.108.65.192:83/storage/palmburg/reviews/1.jpg",
+      "webp": "http://89.108.65.192:83/storage/palmburg/reviews/1.jpg"
     },
     "name": {
       "ru": "Марина",
@@ -17,8 +17,8 @@
   {
     "slug": "review2",
     "photo": {
-      "jpg": "http://2.56.213.189:8088/storage/palmburg/reviews/2.jpg",
-      "webp": "http://2.56.213.189:8088/storage/palmburg/reviews/2.jpg"
+      "jpg": "http://89.108.65.192:83/storage/palmburg/reviews/2.jpg",
+      "webp": "http://89.108.65.192:83/storage/palmburg/reviews/2.jpg"
     },
     "name": {
       "ru": "автор",
@@ -32,8 +32,8 @@
   {
     "slug": "review3",
     "photo": {
-      "jpg": "http://2.56.213.189:8088/storage/palmburg/reviews/3.jpg",
-      "webp": "http://2.56.213.189:8088/storage/palmburg/reviews/3.jpg"
+      "jpg": "http://89.108.65.192:83/storage/palmburg/reviews/3.jpg",
+      "webp": "http://89.108.65.192:83/storage/palmburg/reviews/3.jpg"
     },
     "name": {
       "ru": "Иванов",
@@ -47,8 +47,8 @@
   {
     "slug": "review4",
     "photo": {
-      "jpg": "http://2.56.213.189:8088/storage/palmburg/reviews/4.jpg",
-      "webp": "http://2.56.213.189:8088/storage/palmburg/reviews/4.jpg"
+      "jpg": "http://89.108.65.192:83/storage/palmburg/reviews/4.jpg",
+      "webp": "http://89.108.65.192:83/storage/palmburg/reviews/4.jpg"
     },
     "name": {
       "ru": "тест автор",

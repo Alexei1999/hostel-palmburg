@@ -45,6 +45,8 @@
           //  a(href="https://wa.me/+79637384646" target="_blank")
           //    svg.footer__contact-icon
           //      use(xlink:href="#whatsapp")
+      .footer__links
+        a(v-for='(link) in links2' :key="link.id" target="_blank" :href="`/${link.id}.pdf`") {{link[actualLocale]}}
     .rope-border
     .footer__center-img
     .footer__bottom-img
@@ -57,6 +59,37 @@ import { linksNav } from '~/content/links'
 
 export default {
   name: 'AppFooter',
+  data () {
+    return {
+      links2: [
+        {
+          id: 'privacyPolicyHostelPalmburg',
+          ru: 'Политика конфиденциальности Хостел Пальмбург',
+          en: 'Privacy Policy Hostel Palmburg'
+        },
+        {
+          id: 'consumerCornerHostelPalmburgWithLaws',
+          ru: 'Уголок потребителя Хостел Пальмбург с законами',
+          en: 'Hostel Palmburg User Agreement with Laws'
+        },
+        {
+          id: 'userAgreementPalmburg',
+          ru: 'Пользовательское соглашение Пальмбург',
+          en: 'User Agreement Hostel Palmburg'
+        },
+        {
+          id: 'rulesForStayingAtHostelPalmburg',
+          ru: 'Правила проживания в Хостеле Пальмбург',
+          en: 'Rules for staying at Hostel Palmburg'
+        },
+        {
+          id: 'consumerCornerHostelPalmburg',
+          ru: 'Уголок потребителя Хостел Пальмбург',
+          en: 'Consumer Corner Hostel Palmburg'
+        }
+      ]
+    }
+  },
   components: {
     AppLogo
   },

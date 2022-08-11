@@ -45,7 +45,7 @@
         .wrapper
           h2.quote__title.title {{ translate.documents.title }}
           .quote__description {{ translate.documents.description }}
-            a(href="/docs/dog_ru.docx" target="_blank" style="text-decoration: underline;") {{ translate.documents.link }}
+            a(href="/oferta.pdf" target="_blank" style="text-decoration: underline;") {{ translate.documents.link }}
 </template>
 
 <script>
@@ -66,7 +66,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('data', ['$tt']),
+    ...mapState('data', ['$tt', 'aboutUsImg']),
     translate () {
       return {
         common: this.$tt('common'),

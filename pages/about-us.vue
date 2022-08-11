@@ -3,6 +3,12 @@
     .container
       app-about-us-card(:aboutUsImg="aboutUsImg")
       app-gallery
+    .quote
+      .container
+        .wrapper
+          h2.quote__title.title {{ translate.documents.title }}
+          .quote__description {{ translate.documents.description }}
+            a(href="/oferta.pdf" target="_blank" style="text-decoration: underline;") {{ translate.documents.link }}
 </template>
 
 <script>
@@ -17,7 +23,13 @@ export default {
     AppAboutUsCard
   },
   computed: {
-    ...mapState('data', ['aboutUsImg'])
+    ...mapState('data', ['$tt', 'aboutUsImg']),
+    translate () {
+      return {
+        common: this.$tt('common'),
+        documents: this.$tt('documents')
+      }
+    }
   }
 }
 </script>

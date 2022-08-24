@@ -2,17 +2,19 @@ const SET_DATA = 'SET_DATA'
 const SET_TRANSLATE = 'SET_TRANSLATE'
 
 export const state = () => ({
-  whyUsImg: null,
-  roomsData: null,
-  aboutUsImg: null,
-  faq: null,
-  services: null,
-  sharesData: null,
-  reviews: null,
-  news: null,
-  newHostels: null,
+  whyUsImg: process.env.whyUsImg || null,
+  roomsData: process.env.roomsData || null,
+  aboutUsImg: process.env.aboutUsImg || null,
+  faq: process.env.faq || null,
+  services: process.env.services || null,
+  sharesData: process.env.sharesData || null,
+  reviews: process.env.reviews || null,
+  news: process.env.news || null,
+  newHostels: process.env.newHostels || null,
 
-  $tt: (val) => { return typeof val === 'string' ? '  '.repeat(val.length) : '' }
+  $tt: (val) => {
+    return typeof val === 'string' ? '  '.repeat(val.length) : ''
+  }
 })
 
 export const mutations = {

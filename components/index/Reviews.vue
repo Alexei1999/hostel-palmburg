@@ -15,8 +15,8 @@
                         //- source(type="image/avif" :srcSet="room.imgSrc.avif.srcSet")
                         //- source(type="image/jpeg" :srcSet="room.imgSrc.jpg.srcSet")
                         img(:src="review.photo.jpg")
-                  h3.review-card__title {{review.name[actualLocale]}}
-                  .review-card__description {{review.text[actualLocale]}}
+                  h3.review-card__title {{review && review.name[actualLocale]}}
+                  .review-card__description {{review && review.text[actualLocale]}}
 
         .card-slider__buttons
           button(@click.prevent="slidePrev" ref="prevBtn").card-slider__btn
@@ -32,8 +32,8 @@
             .feedback__company
               picture
                 img(src="@/assets/images/booking-logo.svg" alt="Логотип сервиса Booking.com")
-            p.feedback__text {{ rating.text[actualLocale] }}
-            span.feedback__num {{ rating.rating }}
+            p.feedback__text {{ rating && rating.text[actualLocale] }}
+            span.feedback__num {{ rating && rating.rating }}
   </div>
 
 </template>

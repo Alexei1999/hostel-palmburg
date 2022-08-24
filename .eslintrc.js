@@ -1,18 +1,15 @@
 module.exports = {
-  root: true,
+  root: false,
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: "babel-eslint",
   },
-  extends: [
-    '@nuxtjs',
-    'plugin:nuxt/recommended'
-  ],
+  extends: ["@nuxtjs", "plugin:nuxt/recommended"],
   plugins: [],
   // add your custom rules here
-  ignorePatterns: ['**/Sprites.vue'],
-  rules: {}
-}
+  ignorePatterns: ["**/Sprites.vue"],
+  rules: {},
+};

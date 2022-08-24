@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    script(type="text/javascript" src="http://widget.reservationsteps.ru/js/bnovo.js")
+    script(type="text/javascript" src="/bnovo.js")
     script(type="text/javascript" src="/booking.js" defer: true)
     AppSprites
     AppHeader

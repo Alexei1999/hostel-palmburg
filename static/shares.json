@@ -1,14 +1,14 @@
 {
   "share1": {
     "image": {
-      "jpg": "http://89.108.65.192:83/storage/palmburg/shares/1.jpg",
-      "webp": "http://89.108.65.192:83/storage/palmburg/shares/1.jpg"
+      "jpg": "https://adminhostels.ru/storage/palmburg/shares/1.jpg",
+      "webp": "https://adminhostels.ru/storage/palmburg/shares/1.jpg"
     }
   },
   "share2": {
     "image": {
-      "jpg": "http://89.108.65.192:83/storage/palmburg/shares/2.jpg",
-      "webp": "http://89.108.65.192:83/storage/palmburg/shares/2.jpg"
+      "jpg": "https://adminhostels.ru/storage/palmburg/shares/2.jpg",
+      "webp": "https://adminhostels.ru/storage/palmburg/shares/2.jpg"
     }
   }
 }

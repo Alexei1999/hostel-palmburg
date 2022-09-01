@@ -5,8 +5,8 @@
   },
   "hostel1": {
     "image": {
-      "jpg": "http://89.108.65.192:83/storage/palmburg/otherHostels/1.jpg",
-      "webp": "http://89.108.65.192:83/storage/palmburg/otherHostels/1.jpg"
+      "jpg": "https://adminhostels.ru/storage/palmburg/otherHostels/1.jpg",
+      "webp": "https://adminhostels.ru/storage/palmburg/otherHostels/1.jpg"
     },
     "title": {
       "ru": "русский заголовок12345",
@@ -32,8 +32,8 @@
       "en": "Our hostels"
     },
     "image": {
-      "jpg": "http://89.108.65.192:83/storage/palmburg/otherHostels/2.jpg",
-      "webp": "http://89.108.65.192:83/storage/palmburg/otherHostels/2.jpg"
+      "jpg": "https://adminhostels.ru/storage/palmburg/otherHostels/2.jpg",
+      "webp": "https://adminhostels.ru/storage/palmburg/otherHostels/2.jpg"
     },
     "title": {
       "ru": "русский заголовок",

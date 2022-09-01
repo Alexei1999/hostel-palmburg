@@ -18,8 +18,7 @@ import AppLogo from "~/components/Logo";
 import AppIntro from "~/components/Intro";
 import AppFooter from "~/components/layout/Footer";
 
-const baseUrl =
-  process.env.NODE_ENV === "development" ? "" : "http://89.108.65.192:82";
+const baseUrl = "";
 
 export default {
   components: {

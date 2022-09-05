@@ -18,7 +18,8 @@ import AppLogo from "~/components/Logo";
 import AppIntro from "~/components/Intro";
 import AppFooter from "~/components/layout/Footer";
 
-const baseUrl = "";
+const baseUrl =
+  process.env.NODE_ENV === "development" ? "" : "https://hostelpalmburg.ru";
 
 export default {
   components: {
